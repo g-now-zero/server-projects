@@ -4,8 +4,6 @@
 
 This project provides a step-by-step guide to setting up a virtual environment using Proxmox VE, Windows Server, Active Directory, and DHCP. By following the steps outlined in this guide, users can create a flexible and powerful virtualization platform that supports both container-based and hypervisor-based virtualization, making it suitable for a wide range of use cases and workloads. Here is my initial network diagram:
 
-![Network Topology Diagram for Project](https://imgur.com/a/hVZvclM)
-
 ## Getting Started
 
 To get started, users should download and install Proxmox VE on their host machine. They should also download the Windows 11 and Server 2019 ISOs. From there, users can follow the steps outlined in this guide to create and configure their virtual environment.
