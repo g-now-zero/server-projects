@@ -4,7 +4,9 @@
 
 This project provides a step-by-step guide to setting up a virtual environment using Proxmox VE, Windows Server, Active Directory, and DHCP. By following the steps outlined in this guide, users can create a flexible and powerful virtualization platform that supports both container-based and hypervisor-based virtualization, making it suitable for a wide range of use cases and workloads. Here is my network diagram for the project:
 
-!(https://i.imgur.com/M8xiSb0.jpg)
+<p align="center">
+<img src="https://i.imgur.com/M8xiSb0.jpg" width="600">
+</p>
 
 ## Getting Started
 
@@ -23,35 +25,74 @@ Before beginning this project, users should have:
 
 1. Download and install Proxmox VE on your host machine. Proxmox VE is a powerful virtualization platform that allows you to create and manage virtual machines. Here's an example photo of accessing the GUI the first time I downloaded Proxmox VE, running an Ubuntu 20.04 virtual machine:
 
-!(https://i.imgur.com/qFkVzKn.png)
+<p align="center">
+<img src="https://i.imgur.com/qFkVzKn.png" width="600">
+</p>
 
 2. Download the Windows 11, Server 2019 and VirtIO Windows Drivers and upload ISOs to Proxmox VE. These ISOs are required to install Windows 11 and Server 2019, and to install VirtIO drivers for optimal performance:
 
-!(https://i.imgur.com/x8Ku85M.png)
+<p align="center">
+<img src="https://i.imgur.com/x8Ku85M.png" width="600">
+</p>
 
 3. Create a domain controller virtual machine and install Server 2019 on it by following the steps outlined in the guide. This will allow you to create and manage users, computers, and other resources on a network:
 
-!(https://i.imgur.com/RHZbzzL.png)
+<p align="center">
+<img src="https://i.imgur.com/RHZbzzL.png" width="600">
+</p>
 
 4. Name the server and install Active Directory using PowerShell. Once the server is named, you can install Active Directory using PowerShell, which is a powerful scripting tool that allows you to automate tasks in Windows:
 
-!(https://i.imgur.com/Fm0T599.png)
+<p align="center">
+<img src="https://i.imgur.com/Fm0T599.png" width="600">
+</p>
 
 5. Set up RAS/NAT. RAS/NAT allows you to set up a virtual private network (VPN) and network address translation (NAT) to enable secure remote access to your network resources. This step is important if you want to enable remote access to your network resources:
 
-!(https://i.imgur.com/Dsdy0Q4.png)
+<p align="center">
+<img src="https://i.imgur.com/Dsdy0Q4.png" width="600">
+</p>
 
 6. Set up DHCP on the domain controller. DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses and other network configuration settings to devices on your network. By setting up DHCP on the domain controller, you can simplify network management and ensure that devices are configured correctly:
 
-!(https://i.imgur.com/xAbLnjf.png)
+<p align="center">
+<img src="https://i.imgur.com/xAbLnjf.png" width="600">
+</p>
 
 7. Run a PowerShell script to create 100 users in Active Directory. PowerShell can be used to automate many tasks in Windows, including the creation of multiple users in Active Directory. This step will create 100 users in Active Directory, which can be used to test your network and ensure that everything is working correctly:
 
-!(https://i.imgur.com/sVxsemU.png)
+<p align="center">
+<img src="https://i.imgur.com/sVxsemU.png" width="600">
+</p>
 
-8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that your network resources are accessible from client machines.
+8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that your network resources are accessible from client machines:
 
-9. Join the client to the domain and log in with a domain account. Once the client is joined to the domain, you can log in with a domain account and ensure that everything is working correctly.
+<p align="center">
+<img src="https://i.imgur.com/x8Ku85M.png" width="600">
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/antOqAH.png" width="600">
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/g4AgwMl.png" width="600">
+</p>
+
+9. Join the client to the domain and log in with a domain account. Once the client is joined to the domain, you can log in with a domain account and ensure that everything is working correctly:
+
+
+<p align="center">
+<img src="https://i.imgur.com/ZjcsMwa.png" width="600">
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/ckqgFhX.png" width="600">
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/7cdWjaB.png" width="600">
+</p>
 
 ## Conclusion
 
