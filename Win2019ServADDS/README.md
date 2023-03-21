@@ -28,17 +28,15 @@ Before beginning this project, you should have:
 
 ### 1. Download and install Proxmox VE on your host machine.
       I. Download Proxmox VE:
-         - Go to the ![Proxmox VE](https://www.proxmox.com/en/downloads) website and download the latest version of Proxmox VE. The 
-           website provides download links for ISO images, which can be used to install Proxmox VE on your host machine.
+         - Go to the Proxmox VE website and download the latest version of Proxmox VE.
 
       II. Check Host Machine Requirements:
          - It is recommended to check the minimum hardware requirements before installing Proxmox VE. The recommended hardware 
            requirements are typically found on the Proxmox VE website.
-         - I will say, I ended up having a 2021 Dell with 256GB SSD, 16GB of RAM and a 5500U Hexacore APU lying around and this did the 
-           trick.
+         - I will say, I ended up using a 2021 Dell with 256GB SSD, 16GB of RAM and a 5500U Hexacore APU I had lying around.
 
       III. Install Proxmox VE:
-         - Find a USB drive! I ended up using 32GB one I scooped off of Amazon for cheap.
+         - Find a USB drive! I ended up using a 32GB Sandisk one I scooped off of Amazon for cheap.
          - Since I have MacOS as my daily computer, I downloaded balenaEtcher, which is a free and open-source utility used for writing 
            image files to create live USB flash drives.
    <p align="center">
@@ -61,10 +59,10 @@ Before beginning this project, you should have:
    <img src="https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png" width="800">
    </p>
    
-         In the screenshot above, you can see the Proxmox VE installation process. During the installation, you will be prompted to select 
-         your language, time zone, keyboard layout, and other important settings. You will also need to create a root password for the Proxmox 
+         In the screenshot above, you can see the Proxmox VE installation process. During the installation, you are prompted to select 
+         a language, time zone, keyboard layout, and other important network settings. You will also need to create a root password for the Proxmox 
          VE web interface. Once the installation is complete, you can log in to the Proxmox VE web interface and start creating virtual 
-         machines. I completed this using my network diagram for proper parameters.
+         machines. I completed this using my network diagram for specific parameters.
           
 
 ### 2. Download the Windows 11, Server 2019 and VirtIO Windows Drivers and upload ISOs to Proxmox VE. These ISOs are required to install Windows 11 and Server 2019, and to install VirtIO drivers for optimal performance:
@@ -130,7 +128,7 @@ Here is my newly created VM domain controller "Win-DC1" running Windows Server 2
 
 ### 4. Name the server and install Active Directory using PowerShell. Once the server is named, install Active Directory using PowerShell:
 
-   I. Here is the following Powershell script. Things to note are editing DomainName and DomainNetbiosName are names I gave.
+   I. Here is the following Powershell script. Things to note are editing DomainName and DomainNetbiosName as the values are names I have given.
 
   ```powershell
   
@@ -227,8 +225,7 @@ Here is the script running.
 <img src="https://i.imgur.com/sVxsemU.png" width="600">
 </p>
 
-### 8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that 
-your network resources are accessible from client machines:
+### 8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that your network resources are accessible from client machines:
 
     I. Create a client virtual machine and install Windows 11 Pro:
         a. Click on the "Create VM" button.
@@ -252,8 +249,7 @@ your network resources are accessible from client machines:
 <img src="https://i.imgur.com/g4AgwMl.png" width="600">
 </p>
 
-### 9. Join the client to the domain and log in with a domain account. Once the client is joined to the domain, you can log in with a 
-domain account and ensure that everything is working correctly:
+### 9. Join the client to the domain and log in with a domain account. Once the client is joined to the domain, you can log in with a domain account and ensure that everything is working correctly:
 
     II. Join the Win11Client to newly created domain gdomain.com and log in with a domain account (awelch in this case which is one of the names in 
     names.txt):
