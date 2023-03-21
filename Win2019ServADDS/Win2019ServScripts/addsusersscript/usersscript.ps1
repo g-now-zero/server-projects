@@ -1,8 +1,8 @@
 # Define variable for Active Directory password
 $password = ConvertTo-SecureString "Password1" -AsPlainText -Force
 
-# Create new Active Directory OU called "Users"
-New-ADOrganizationalUnit -Name "Users" -ProtectedFromAccidentalDeletion 
+# Create new Active Directory OU called "_USERS"
+New-ADOrganizationalUnit -Name "_USERS" -ProtectedFromAccidentalDeletion 
 $false
 
 # Read list of 100 names for user creation from text file
