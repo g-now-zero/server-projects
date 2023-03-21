@@ -164,12 +164,24 @@ Here is the newly created Active Directory in the Server Dashboard.
 </p>
 
 ### 5. Set up RAS/NAT based on your own network topology. RAS/NAT allows you to set up network address translation (NAT) to enable secure remote access to your network resources. This step is important if you want to enable remote access to your network resources:
+        I. Set up RAS/NAT 
+            - Open the Server Manager.
+            - Click on "Add roles and features".
+            - Follow the prompts to install DHCP.
+            - Configure the RAS/NAT settings by clicking Tools and “Routing and Remote Access” and configuring NAT on the external NIC.
+
 
 <p align="center">
 <img src="https://i.imgur.com/Dsdy0Q4.png" width="800">
 </p>
 
 ### 6. Set up DHCP on the domain controller. DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses and other network configuration settings to devices on your network. By setting up DHCP on the domain controller, you can simplify network management and ensure that devices are configured correctly. * I followed the installation steps using my network parameters outlined in my network diagram:
+
+      I. Set up DHCP on the domain controller by following these steps:
+          - Open the Server Manager.
+          - Click on "Add roles and features".
+          - Follow the prompts to install DHCP.
+          - Configure the DHCP settings.
 
 <p align="center">
 <img src="https://i.imgur.com/DuXtXDA.png" width="600">
@@ -228,13 +240,13 @@ Here is the script running.
 ### 8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that your network resources are accessible from client machines:
 
     I. Create a client virtual machine and install Windows 11 Pro:
-        a. Click on the "Create VM" button.
-        b. Fill out the necessary information, such as the name, CPU, memory, and storage.
-        c. Select the "Windows" operating system.
-        d. Choose "VirtIO" for the disk and network device.
-        e. Select the ISO file for Windows 11 Pro.
-        f. Click on "Create" to create the virtual machine.
-        g. Start the virtual machine and follow the prompts to install Windows 11 Pro.
+        - Click on the "Create VM" button.
+        - Fill out the necessary information, such as the name, CPU, memory, and storage.
+        - Select the "Windows" operating system.
+        - Choose "VirtIO" for the disk and network device.
+        - Select the ISO file for Windows 11 Pro.
+        - Click on "Create" to create the virtual machine.
+        - Start the virtual machine and follow the prompts to install Windows 11 Pro.
 
 
 <p align="center">
@@ -253,11 +265,11 @@ Here is the script running.
 
     II. Join the Win11Client to newly created domain gdomain.com and log in with a domain account (awelch in this case which is one of the names in 
     names.txt):
-        a. Open the System Properties.
-        b. Click on "Change settings" next to "Computer name, domain, and workgroup settings".
-        c. Click on "Change" to change the computer name and join the domain.
-        d. Restart the computer.
-        e. Log in with a domain account
+        - Open the System Properties.
+        - Click on "Change settings" next to "Computer name, domain, and workgroup settings".
+        - Click on "Change" to change the computer name and join the domain.
+        - Restart the computer.
+        - Log in with a domain account
 
 
 <p align="center">
