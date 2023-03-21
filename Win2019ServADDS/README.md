@@ -5,7 +5,7 @@
 This project provides a step-by-step guide of setting up a virtual environment using Proxmox VE virtualization to setup a Windows Domain environment that runs Active Directory and creating bulk users with Powershell that are able to login to the domain on a Client computer.  Here is my network diagram for the project:
 
 <p align="center">
-<img src="https://i.imgur.com/M8xiSb0.jpg" width="600">
+<img src="https://i.imgur.com/M8xiSb0.jpg" width="800">
 </p>
 
 ## Getting Started
@@ -42,7 +42,7 @@ Before beginning this project, you should have:
          - Since I have MacOS as my daily computer, I downloaded balenaEtcher, which is a free and open-source utility used for writing 
            image files to create live USB flash drives.
    <p align="center">
-   <img src="hhttps://i.imgur.com/1P09wF9.png" width="400">
+   <img src="hhttps://i.imgur.com/1P09wF9.png" width="600">
    </p>           
       
          - Insert the USB drive into your main machine and format the USB drive using the Proxmox .img ISO.
@@ -54,24 +54,20 @@ Before beginning this project, you should have:
        IV. Screenshot of the Proxmox VE installation process:
    
    <p align="center">
-   <img src="https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png" width="600">
+   <img src="https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png" width="800">
    </p>
    
    <p align="center">
-   <img src="https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png" width="600">
+   <img src="https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png" width="800">
    </p>
    
          In the screenshot above, you can see the Proxmox VE installation process. During the installation, you will be prompted to select 
          your language, time zone, keyboard layout, and other important settings. You will also need to create a root password for the Proxmox 
          VE web interface. Once the installation is complete, you can log in to the Proxmox VE web interface and start creating virtual 
-         machines. I completed this using my network parameters.
+         machines. I completed this using my network diagram for proper parameters.
           
 
 ### 2. Download the Windows 11, Server 2019 and VirtIO Windows Drivers and upload ISOs to Proxmox VE. These ISOs are required to install Windows 11 and Server 2019, and to install VirtIO drivers for optimal performance:
-
-<p align="center">
-<img src="https://i.imgur.com/x8Ku85M.png" width="600">
-</p>
 
       I. Download the required files:
          - Windows 11 ISO: The Windows 11 ISO is required to install Windows 11 on the client virtual machine. Download the ISO from the 
@@ -88,7 +84,7 @@ Before beginning this project, you should have:
          - Once the files are uploaded, they will be available to use when creating virtual machines.
          
 <p align="center">
-<img src="https://i.imgur.com/iekEqog.png" width="600">
+<img src="https://i.imgur.com/iekEqog.png" width="800">
 </p>
 
          In the screenshot above, you can see the Proxmox VE web interface where you can upload ISO files. To upload an ISO, simply 
@@ -104,92 +100,78 @@ Before beginning this project, you should have:
 
 3. Create a domain controller virtual machine and install Server 2019 on it by following the steps outlined in the guide. This will allow you to create and manage users, computers, and other resources on a network:
 
-      I. Create a Virtual Machine:
-         - Open the Proxmox VE web interface and log in.
-         - Click on "Create VM" to begin creating a new virtual machine.
-         - Enter a name for the virtual machine.
-         - Select the operating system type and version. In this case, select "Microsoft Windows" for the type and "Windows Server 2019" 
-         for the version.
-         - Set the amount of memory (RAM) you want to allocate to the virtual machine. It is recommended to allocate at least 4GB of RAM 
-         for Windows Server 2019.
-         - Set the number of CPU cores you want to allocate to the virtual machine. It is recommended to allocate at least 2 CPU cores 
-         for Windows Server 2019.
-         - Configure the storage settings for the virtual machine, including the amount of storage space you want to allocate and the 
-         storage format.
-         - Click "Create" to save the virtual machine settings.
+        I. Create a Virtual Machine:
+           - Open the Proxmox VE web interface and log in.
+           - Click on "Create VM" to begin creating a new virtual machine.
+           - Enter a name for the virtual machine.
+           - Select the operating system type and version. In this case, select "Microsoft Windows" for the type and "Windows Server 2019" 
+           for the version.
+           - Set the amount of memory (RAM) you want to allocate to the virtual machine. It is recommended to allocate at least 4GB of RAM 
+           for Windows Server 2019.
+           - Set the number of CPU cores you want to allocate to the virtual machine. It is recommended to allocate at least 2 CPU cores 
+           for Windows Server 2019.
+           - Configure the storage settings for the virtual machine, including the amount of storage space you want to allocate and the 
+           storage format.
+           - Click "Create" to save the virtual machine settings.
 
-      II. Install Windows Server 2019:
-         - Start the virtual machine and insert the Server 2019 ISO into the virtual DVD drive.
-         - Boot the virtual machine from the ISO and follow the on-screenprompts to install Windows Server 2019.
-         - During the installation process, you will be prompted to select the language, time zone, and keyboard layout.
-         - You will also need to select the disk where you want to install Windows Server 2019.
-         - Once the installation is complete, you will need to configure the server settings and install any necessary updates.
-
-      III. Screenshot of the Virtual Machine Creation Process:
-
-         <p align="center">
-         <img src="https://i.imgur.com/RHZbzzL.png" width="600">
-         </p>
-
-         In the screenshot above, you can see the Proxmox VE web interface where you can create a new virtual machine. You can see the 
-         settings that need to be configured, including the name, operating system type and version, memory allocation, CPU allocation, 
-         and storage settings.
-
-      IV. Screenshot of the Windows Server 2019 Installation Process:
-
-         <p align="center">
-         <img src="https://i.imgur.com/Fm0T599.png" width="600">
-         </p>
-
-         In the screenshot above, you can see the Windows Server 2019 installation process. During the installation, you will be 
-         prompted to select the language
+        II. Install Windows Server 2019:
+           - Start the virtual machine and insert the Server 2019 ISO into the virtual DVD drive.
+           - Boot the virtual machine from the ISO and follow the on-screenprompts to install Windows Server 2019.
+           - During the installation process, you will be prompted to select the language, time zone, and keyboard layout.
+           - You will also need to select the disk where you want to install Windows Server 2019.
+           - Once the installation is complete, you will need to configure the server settings and install any necessary updates.
 
 <p align="center">
-<img src="https://i.imgur.com/RHZbzzL.png" width="600">
+Here is my newly created VM domain controller "Win-DC1" running Windows Server 2019 with correct VirtIO drivers:
+</p>
+<p align="center">
+<img src="https://i.imgur.com/RHZbzzL.png" width="750">
 </p>
 
-### 4. Name the server and install Active Directory using PowerShell. Once the server is named, you can install Active Directory using PowerShell, which is a powerful scripting tool that allows you to automate tasks in Windows:
+### 4. Name the server and install Active Directory using PowerShell. Once the server is named, install Active Directory using PowerShell:
 
-      I. Here is the following Powershell script. Things to note are editing DomainName and DomainNetbiosName to your specific choice.
+   I. Here is the following Powershell script. Things to note are editing DomainName and DomainNetbiosName are names I gave.
 
-        ```powershell
-            # Powershell script to install and configure AD DS on a Windows 2019 Server
+  ```powershell
+  
+      # Powershell script to install and configure AD DS on a Windows 2019 Server
 
-            # Import the ADDSDeployment module
-            Import-Module ADDSDeployment
+      # Import the ADDSDeployment module
+      Import-Module ADDSDeployment
 
-            # Install AD DS and create a new forest
-            Install-ADDSForest `
-                -CreateDnsDelegation:$false `
-                -DatabasePath "C:\Windows\NTDS" `
-                -DomainMode "WinThreshold" `
-                -DomainName "gdomain.com" `
-                -DomainNetbiosName "GDOMAIN" `
-                -ForestMode "WinThreshold" `
-                -InstallDns:$true `
-                -LogPath "C:\Windows\NTDS" `
-                -NoRebootOnCompletion:$false `
-                -SysvolPath "C:\Windows\SYSVOL" `
-                -Force:$true
+      # Install AD DS and create a new forest
+      Install-ADDSForest `
+          -CreateDnsDelegation:$false `
+          -DatabasePath "C:\Windows\NTDS" `
+          -DomainMode "WinThreshold" `
+          -DomainName "gdomain.com" `
+          -DomainNetbiosName "GDOMAIN" `
+          -ForestMode "WinThreshold" `
+          -InstallDns:$true `
+          -LogPath "C:\Windows\NTDS" `
+          -NoRebootOnCompletion:$false `
+          -SysvolPath "C:\Windows\SYSVOL" `
+          -Force:$true
 
-            # This script should be run on a Windows 2019 Server as an administrator
-            # The Powershell application used is Windows Powershell or Powershell ISE
-            # The user running the script should have administrative permissions on the server
-        ```
-
+      # This script should be run on a Windows 2019 Server as an administrator
+      # The Powershell application used is Windows Powershell ISE
+      # Administrative permissions are required to run the script on the server
+      
+  ```
 <p align="center">
-<img src="https://i.imgur.com/Fm0T599.png" width="600">
+Here is the newly created Active Directory in the Server Dashboard.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/Fm0T599.png" width="800">
 </p>
 
 ### 5. Set up RAS/NAT based on your own network topology. RAS/NAT allows you to set up network address translation (NAT) to enable secure remote access to your network resources. This step is important if you want to enable remote access to your network resources:
 
 <p align="center">
-<img src="https://i.imgur.com/Dsdy0Q4.png" width="600">
+<img src="https://i.imgur.com/Dsdy0Q4.png" width="800">
 </p>
 
-### 6. Set up DHCP on the domain controller. DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses and 
-other network configuration settings to devices on your network. By setting up DHCP on the domain controller, you can simplify network 
-management and ensure that devices are configured correctly:
+### 6. Set up DHCP on the domain controller. DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses and other network configuration settings to devices on your network. By setting up DHCP on the domain controller, you can simplify network management and ensure that devices are configured correctly. * I followed the installation steps using my network parameters outlined in my network diagram:
 
 <p align="center">
 <img src="https://i.imgur.com/DuXtXDA.png" width="600">
@@ -198,17 +180,65 @@ management and ensure that devices are configured correctly:
 <img src="https://i.imgur.com/xAbLnjf.png" width="600">
 </p>
 
-### 7. Run a PowerShell script to create 100 users in Active Directory. PowerShell can be used to automate many tasks in Windows, 
-including the creation of multiple users in Active Directory. This step will create 100 users in Active Directory, which can be used to 
-test your network and ensure that everything is working correctly:
+### 7. Run a PowerShell script to create 100 users in Active Directory. PowerShell is used to automate many tasks in Windows, including the creation of multiple users in Active Directory. This step will create 100 users in Active Directory, which can be used to test your network and ensure that everything is working correctly:
+
+```powershell
+
+# Define variable for Active Directory password
+$password = ConvertTo-SecureString "Password1" -AsPlainText -Force
+
+# Create new Active Directory OU called "_USERS"
+New-ADOrganizationalUnit -Name "_USERS" -ProtectedFromAccidentalDeletion $false
+
+# Read list of 100 names for user creation from text file – if you’re running this script you will need to define the path to the addsusersscript folder
+$names = Get-Content "C:\Users\a-gnowotarski\Desktop\addsusersscript\names.txt"
+
+# Loop through each name and create a new user
+foreach ($name in $names) {
+    # Split name into first and last name
+    $firstName, $lastName = $name -split ' '
+    
+    # Generate username
+    $username = $firstName.Substring(0,1) + $lastName.ToLower()
+    
+    # Write output message
+    Write-Host "The following user has been created: $($username)" -BackgroundColor white -ForegroundColor Black
+    
+    # Create new user in Active Directory
+    New-ADUser -AccountPassword $password `
+        -GivenName $firstName `
+        -Surname $lastName `
+        -DisplayName $username `
+        -Name $username `
+        -EmployeeID $username `
+        -PasswordNeverExpires $true `
+        -Path "OU=_USERS,$(([ADSI]'').distinguishedName)"
+}
+
+```
+
+This Powershell script first defines a secure password for the new _USERS, creates a new Organizational Unit in Active Directory called "Users," and reads a list of 100 names from the names.txt file. It then loops through each name, splits it into a first and last name, generates a username, and creates a new user in Active Directory with the given attributes. Finally, it outputs a message to the console for each user created. These scripts can be found in the repo.
 
 
+<p align="center">
+Here is the script running.
+</p>
 <p align="center">
 <img src="https://i.imgur.com/sVxsemU.png" width="600">
 </p>
 
 ### 8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that 
 your network resources are accessible from client machines:
+
+    I. Create a client virtual machine and install Windows 11 Pro:
+        a. Click on the "Create VM" button.
+        b. Fill out the necessary information, such as the name, CPU, memory, and storage.
+        c. Select the "Windows" operating system.
+        d. Choose "VirtIO" for the disk and network device.
+        e. Select the ISO file for Windows 11 Pro.
+        f. Click on "Create" to create the virtual machine.
+        g. Start the virtual machine and follow the prompts to install Windows 11 Pro.
+
 
 <p align="center">
 <img src="https://i.imgur.com/x8Ku85M.png" width="600">
@@ -224,6 +254,14 @@ your network resources are accessible from client machines:
 
 ### 9. Join the client to the domain and log in with a domain account. Once the client is joined to the domain, you can log in with a 
 domain account and ensure that everything is working correctly:
+
+    II. Join the Win11Client to newly created domain gdomain.com and log in with a domain account (awelch in this case which is one of the names in 
+    names.txt):
+        a. Open the System Properties.
+        b. Click on "Change settings" next to "Computer name, domain, and workgroup settings".
+        c. Click on "Change" to change the computer name and join the domain.
+        d. Restart the computer.
+        e. Log in with a domain account
 
 
 <p align="center">
