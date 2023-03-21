@@ -2,7 +2,7 @@
 
 
 
-This project provides a step-by-step guide of setting up a virtual environment using Proxmox VE virtualization to setup a Windows Domain environment that runs Active Directory and creating bulk users with Powershell that are able to login to the domain on a Client computer.  Here is my network diagram for the project:
+This project provides a step-by-step guide of setting up a virtual environment using Proxmox VE virtualization to setup a Windows Domain environment that runs Active Directory and creates bulk users with a Powershell script that are able to login to the domain on a Client computer.  Here is my network diagram for the project:
 
 <p align="center">
 <img src="https://i.imgur.com/M8xiSb0.jpg" width="800">
