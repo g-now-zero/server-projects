@@ -26,7 +26,7 @@ Before beginning this project, you should have:
 
 ## Steps
 
-### 1. Download and install Proxmox VE on your host machine.
+### 1. Download and install Proxmox VE on your host machine:
       I. Download Proxmox VE:
          - Go to the Proxmox VE website and download the latest version of Proxmox VE.
 
@@ -65,7 +65,7 @@ Before beginning this project, you should have:
          machines. I completed this using my network diagram for specific parameters.
           
 
-### 2. Download the Windows 11, Server 2019 and VirtIO Windows Drivers and upload ISOs to Proxmox VE. These ISOs are required to install Windows 11 and Server 2019, and to install VirtIO drivers for optimal performance:
+### 2. Download the Windows 11, Server 2019 and VirtIO Windows Drivers and upload ISOs to Proxmox VE:
 
       I. Download the required files:
          - Windows 11 ISO: The Windows 11 ISO is required to install Windows 11 on the client virtual machine. Download the ISO from the 
@@ -96,7 +96,7 @@ Before beginning this project, you should have:
            with Windows operating systems.
            
 
-3. Create a domain controller virtual machine and install Server 2019 on it by following the steps outlined in the guide. This will allow you to create and manage users, computers, and other resources on a network:
+3. Create a domain controller (DC) virtual machine and install Server 2019 on it to allow the creatation and manage users, computers, and other resources on the network:
 
         I. Create a Virtual Machine:
            - Open the Proxmox VE web interface and log in.
@@ -126,7 +126,7 @@ Here is my newly created VM domain controller "Win-DC1" running Windows Server 2
 <img src="https://i.imgur.com/RHZbzzL.png" width="750">
 </p>
 
-### 4. Name the server and install Active Directory using PowerShell. Once the server is named, install Active Directory using PowerShell:
+### 4. Name the server and install Active Directory using PowerShell:
 
    I. Here is the following Powershell script. Things to note are editing DomainName and DomainNetbiosName as the values are names I have given.
 
@@ -163,7 +163,7 @@ Here is the newly created Active Directory in the Server Dashboard.
 <img src="https://i.imgur.com/Fm0T599.png" width="800">
 </p>
 
-### 5. Set up RAS/NAT based on your own network topology. RAS/NAT allows you to set up network address translation (NAT) to enable secure remote access to your network resources. This step is important if you want to enable remote access to your network resources:
+### 5. Set up RAS/NAT based on the network (RAS/NAT allows for the set up of network address translation (NAT) to enable secure remote access to network resources):
         I. Set up RAS/NAT 
             - Open the Server Manager.
             - Click on "Add roles and features".
@@ -175,7 +175,7 @@ Here is the newly created Active Directory in the Server Dashboard.
 <img src="https://i.imgur.com/Dsdy0Q4.png" width="800">
 </p>
 
-### 6. Set up DHCP on the domain controller. DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses and other network configuration settings to devices on your network. By setting up DHCP on the domain controller, you can simplify network management and ensure that devices are configured correctly. * I followed the installation steps using my network parameters outlined in my network diagram:
+### 6. Set up DHCP on the domain controller (DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses and other network configuration settings to devices on your network):
 
       I. Set up DHCP on the domain controller by following these steps:
           - Open the Server Manager.
@@ -190,7 +190,7 @@ Here is the newly created Active Directory in the Server Dashboard.
 <img src="https://i.imgur.com/xAbLnjf.png" width="600">
 </p>
 
-### 7. Run a PowerShell script to create 100 users in Active Directory. PowerShell is used to automate many tasks in Windows, including the creation of multiple users in Active Directory. This step will create 100 users in Active Directory, which can be used to test your network and ensure that everything is working correctly:
+### 7. Run a PowerShell script to create 100 users in Active Directory, which I use to test the network and ensure that everything is working correctly:
 
 ```powershell
 
@@ -237,7 +237,7 @@ Here is the script running.
 <img src="https://i.imgur.com/sVxsemU.png" width="600">
 </p>
 
-### 8. Create a client virtual machine and install Windows 11 on it. This will allow you to test network connectivity and ensure that your network resources are accessible from client machines:
+### 8. Create a client virtual machine and install Windows 11 on it, thus enabling me to test network connectivity and ensure that your network resources are accessible from client machines:
 
     I. Create a client virtual machine and install Windows 11 Pro:
         - Click on the "Create VM" button.
@@ -261,7 +261,7 @@ Here is the script running.
 <img src="https://i.imgur.com/g4AgwMl.png" width="600">
 </p>
 
-### 9. Join the client to the domain and log in with a domain account. Once the client is joined to the domain, you can log in with a domain account and ensure that everything is working correctly:
+### 9. Join the client to the domain and log in with a domain account:
 
     II. Join the Win11Client to newly created domain gdomain.com and log in with a domain account (awelch in this case which is one of the names in 
     names.txt):
@@ -286,7 +286,7 @@ Here is the script running.
 
 ## Conclusion
 
-This project provides a step-by-step guide to creating a domain controller virtual machine and installing Server 2019 on it, as well as setting up RAS/NAT, DHCP, and running a PowerShell script to create multiple users in Active Directory. By completing these steps, you can create a fully functional Windows network for testing and development purposes.
+This project provides shows the creation of a domain controller virtual machine and the installation of Server 2019 on it, as well as setting up RAS/NAT, DHCP, and running a PowerShell script to create multiple users in Active Directory.
 
 This project stands as a steppingstone in my interest in learning more about server administration and management, familiarity with Github, as well as anyone who wants to develop their own server projects. The steps outlined in this project can be customized to fit your specific needs and can be used as a starting point for your own server projects.
 
