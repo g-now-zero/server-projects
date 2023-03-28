@@ -16,12 +16,10 @@ To get started, download and install Proxmox VE on the host machine. Also downlo
 
 Before beginning this project, you should have:
 
-- A host machine capable of running ![Proxmox VE](https://www.proxmox.com/en/downloads)
-  (Why Proxmox? Proxmox VE is a powerful virtualization platform that allows you to create and 
-  manage virtual machines. I chose this platform because A) it is an Open Source server magagement platform and B) it is Kernel-Based virtualization which 
-  is extremely efficient.)
-- The ![Windows 11](https://www.microsoft.com/software-download/windows11) and ![Server 2019](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) ISOs
-- ![VirtIO Windows Driver](https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md) 
+- A host machine capable of running Proxmox VE (https://www.proxmox.com/en/downloads).
+  Why did I choose Proxmox? I chose this virtualization platform because A) it is an Open Source server magagement platform and B) it is Kernel-Based virtualization which is extremely efficient with the limited resources my host had.
+- The Windows 11 (https://www.microsoft.com/software-download/windows11) and Server 2019 (https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) ISOs
+- VirtIO Windows Driver (https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md) 
 - Knowledge of virtualization and networking
 
 ## Steps
