@@ -284,25 +284,11 @@ Here is the script running.
 
 ## Conclusion
 
-This project provides shows the creation of a domain controller virtual machine and the installation of Server 2019 on it, as well as setting up RAS/NAT, DHCP, and running a PowerShell script to create multiple users in Active Directory.
+This project shows the creation of a domain controller virtual machine and the installation of Server 2019 on it, as well as setting up RAS/NAT, DHCP, and running a PowerShell script to create multiple users in Active Directory.
 
 This project stands as a steppingstone in my interest in learning more about server administration and management, familiarity with Github, as well as anyone who wants to develop their own server projects. The steps outlined in this project can be customized to fit your specific needs and can be used as a starting point for your own server projects.
 
 If you have any questions about this project, or if you would like to collaborate on a server project of your own, please feel free to reach out to me. Thank you for visiting this repository, and I hope you find this Windows 2019 server project to be both informative and useful!
-
-## Built With
-
-This project was built using the following:
-
-- Proxmox VE
-- Windows Server 2019
-- Windows 11
-- Windows VirtIO drivers
-- PowerShell
-
-## Authors
-
-- Gregory N. (https://github.com/gregorynow)
 
 ## Acknowledgments
 
